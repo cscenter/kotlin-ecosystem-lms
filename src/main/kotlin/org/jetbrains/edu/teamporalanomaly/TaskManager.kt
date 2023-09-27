@@ -1,7 +1,10 @@
-package org.jetbrains.edu
+package org.jetbrains.edu.teamporalanomaly
 
 import org.jetbrains.edu.data.Language
 import org.jetbrains.edu.data.Task
+import kotlin.collections.filterNotNull
+import kotlin.collections.getOrNull
+import kotlin.collections.getOrNull
 
 interface TaskManager {
     companion object {
@@ -25,7 +28,7 @@ class DumbTaskManager : TaskManager {
     private val task2 = Task("BST in CPP", Language.CPP)
     private val task3 = Task("FCB", Language.CPP)
     private val task4 = Task("Android app", Language.KOTLIN)
-    private val tasks: MutableList<Task?> = mutableListOf(task0, task1, task2, task3, task4)
+    private val tasks: MutableList<Task?> = mutableListOf(task0, null, task1, task2, task3, task4)
 
     override fun count() = tasks.filterNotNull().size.toLong()
 

@@ -12,13 +12,13 @@ import io.ktor.server.resources.post
 import io.ktor.server.resources.put
 import io.ktor.server.response.respond
 import io.ktor.server.routing.routing
-import org.jetbrains.edu.TaskManager
+import org.jetbrains.edu.teamporalanomaly.TaskManager
 import org.jetbrains.edu.exceptins.NoSuchTask
 import org.jetbrains.edu.data.Task
 import org.jetbrains.edu.modules.Api.Tasks
 
 fun Application.configureApi() {
-    val taskManager: TaskManager = TaskManager.get()
+    val taskManager: TaskManager = TaskManager.Companion.get()
 
     install(Resources)
     routing {
