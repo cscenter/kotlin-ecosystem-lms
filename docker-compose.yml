@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  soccon-api:
+    image: server:0.0.2
+    container_name: app
+    ports:
+      - '8080:8080'
+    environment:
+      JAVA_TOOL_OPTIONS: "-Xms256M -Xmx10G"
+      DB_HOST: postgres
+
+  postgres:
+    image: postgres:14.3-alpine
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - '5432:5432'
