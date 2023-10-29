@@ -1,13 +1,18 @@
 # Kotlin Ecosystem LMS course task
 
-This repo contains a server for a Learning Management System.
-The server will evolve together with your tasks.
-Everything in [temporal anomaly](./src/main/kotlin/org/jetbrains/edu/teamporalanomaly) folder is subject to change, 
-everything else is almost guaranteed to stay the same.
-Feel free to change the server yourself, but note that then it will be your burden to follow the "main" implementation.
+To run the server and postgres database using docker run `docker-compose up`.
+Server will run at localhost:8080, postgres at localhost:5432.
 
-## Task 1
-Right now the server is a simple CRUD server for tasks. 
-Each task has a description and language, in which it should be solved.
+You can populate DB initially using [BasicData](/server/src/main/kotlin/BasicData.kt) as the starting point.
 
-The first task is to write an Android application, which would be able to CRUD (duh...) tasks from the server.
+## Task
+
+Create an <u>Android app</u> client (25%) and <u>Desktop or Web</u> client (25%) to view courses and corresponding 
+assignments / tasks; submit solutions / answers. They have to use data classes from the `shared` module, so go with 
+either full Compose or Kotlin/JS.
+
+Implement option to add new courses, assignments, tasks and course materials. (25%)
+
+Implement authorization (Google OAUTH) to differentiate between teachers and students. (25%)
+Students should be able to see all courses, enroll into them and submit solutions / answers.
+Teachers should be able to add / edit courses, view enrollments and see submissions.
